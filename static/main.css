@@ -1,0 +1,94 @@
+body{
+    background-color: black;
+    color: white;
+    margin: 0px;
+}
+
+.content{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 80svh;
+}
+
+.header{
+    width: 100%;
+    padding-block: 16px;
+    background-color: #3B3486;
+}
+
+
+.form-container{
+    width: 60vw;
+    max-width: 600px;
+    background-color: rgb(43, 42, 42);
+    padding: 16px;
+    padding-block: 64px;
+    border-radius: 4px;
+}
+
+.form-container form input{
+    width: 80%;
+    margin-right: 16px;
+    border: none;
+    padding-block: 8px;
+    background-color: rgb(66, 66, 66);
+    color: white;
+}
+
+.form-container form input:focus{
+    outline: 2px solid #40A2D8;
+}
+
+
+.form-container form button{
+    margin-top: 24px;
+}
+
+.form-container form label span{
+    color: red;
+}
+
+button{
+    background-color: #3B3486;
+    color: white;
+    font-weight: bold;
+    padding-block: 4px;
+    border: none;
+    transition: background-color 200ms;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #6a9b9c;
+    border: none;
+}
+
+
+a{
+    color: white;
+    text-decoration: underline;
+}
+
+a:hover{
+    color: wheat;
+}
+
+.message{
+    width: 100%;
+    margin-top: 16px;
+    color: black;
+    font-size: 0.9rem;
+
+    background-color: antiquewhite;
+    padding-right: 8px;
+
+    display: flex;
+    align-items: center;
+}
+
+.message .status{
+    width: 4px;
+    height: 64px;
+    margin-right: 8px;
+}

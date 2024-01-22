@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorten</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+    <script src="{{ url_for('static', filename='main.js')}}" defer></script>
+    <script src="https://raw.githubusercontent.com/nabajit00/nabajit00.github.io/main/scripts/common.js" type=""></script>
+
+</head>
+<body>
+    <div class="header">
+        <h1>Shorten Your URLs {{ host }}</h1>
+        <a href="https://github.com">Link to repo</a>
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <form action="{{ url_for('create') }}" method="post">
+                <label for="url_input">Enter the URL <span>*</span></label>
+                <input required id="url_input" placeholder="https://example.com/images/cat.png" name="url">
+    
+                <div>
+                    <button type="submit">Shorten</button>
+                </div>
+            </form>
+            <div class="message">
+                {% if data and data.status_color %}
+                    <div class="status" style='background-color: "{{ data.status_color }}";'></div>
+                {% else %}
+                    <div class="status"></div>
+                {% endif %}
+                <div class="text">
+                    {% if data %}
+                        {{ data.message }}, 
+                        {% if data.link %}
+                            <a rel="" href="{{ data.link }}" style="color: black;">{{ data.link }}</a>
+                            <button style="margin-left: 16px;padding-block: 4px;" onclick="copyText(event,'HELLO WORLD')">copy</button>
+                        {% endif %}
+
+                    {% else %}
+                        Your shortened url will be present here
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>
