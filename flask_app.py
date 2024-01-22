@@ -1,7 +1,6 @@
 from flask import Flask,request,make_response,abort,render_template,redirect
 from dotenv import load_dotenv
 from markupsafe import escape
-from os import getenv
 import validators
 import services.url as url_service
 
@@ -33,5 +32,3 @@ def create():
         return render_template('index.html',data={'message':'Already added','link':url_service.get_short_url(url),'already_present':True})
 
     return render_template('index.html',data={'message':'Success','link':url_service.add_url(url),'status_color':'#80BCBD'})
-    
-app.run(debug=(getenv('DEBUG')=='True'))
